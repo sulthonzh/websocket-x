@@ -1,0 +1,22 @@
+{
+  "name": "websocket-x",
+  "version": "1.0.0",
+  "description": "Zero-dependency WebSocket library for Node.js with practical utilities and CLI tool",
+  "main": "src/index.js",
+  "type": "module",
+  "bin": {
+    "websocket-x": "src/cli.js"
+  },
+  "scripts": {
+    "build": "node build.js",
+    "test": "node --test test/*.js",
+    "dev": "node --watch src/cli.js"
+  },
+  "keywords": ["websocket", "ws", "zero-dependency", "nodejs", "real-time", "server", "client"],
+  "author": "sulthonzh",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "enginesStrict": true
+}
