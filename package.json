@@ -9,10 +9,10 @@
   },
   "scripts": {
     "build": "node build.js",
-    "test": "c8 --reporter=text --reporter=lcov node --test test/client.test.js test/server.test.js",
+    "test": "c8 --reporter=text --reporter=lcov node --test test/client.test.js test/server.test.js test/coverage-gaps.test.js test/server-coverage.test.js test/coverage-polish.test.js",
     "test:integration": "node --test test/integration.test.js",
-    "test:coverage": "c8 --reporter=text --reporter=lcov node --test test/client.test.js test/server.test.js",
-    "test:core": "node --test test/client.test.js test/server.test.js",
+    "test:coverage": "c8 --reporter=text --reporter=lcov node --test test/client.test.js test/server.test.js test/coverage-gaps.test.js test/server-coverage.test.js test/coverage-polish.test.js",
+    "test:core": "node --test test/client.test.js test/server.test.js test/coverage-gaps.test.js test/server-coverage.test.js test/coverage-polish.test.js",
     "dev": "node --watch src/cli.js"
   },
   "keywords": [

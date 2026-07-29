@@ -46,12 +46,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Planned
-- TypeScript type definitions file (index.d.ts)
-- Frame fragmentation support
-- Rate limiting recommendations in README
-- Integration tests expansion
-- Performance benchmarks
+### Fixed
+- `connectWebSocket()` now properly creates an HTTP request and returns `Promise<WebSocketClient>` (was passing URL string as socket — broken since inception)
+- `WebSocketClient` close event now correctly emits when socket closes (was suppressed by `cleanup()` setting `readyState = CLOSED` before the conditional check)
+- `WebSocketClient` import added to `websocket.js` (was referenced but never imported — caused `ReferenceError` in `completeUpgrade`)
+
+### Added
+- 30 new tests covering: server path mismatch, verifyClient rejection paths, subprotocol echo, client error relay, socket error cleanup, extended payload lengths (16-bit/64-bit), unmasked frames, binary send, large payload framing, ping/pong errors, close frame parsing, insufficient data handling
+- Coverage: 79% → 96% statements, 71% → 88% branches
+
+### Changed
+- Test scripts updated to include `coverage-polish.test.js`
 
 ---
 

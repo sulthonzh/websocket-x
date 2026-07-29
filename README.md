@@ -52,11 +52,9 @@ server.listen(8080, () => {
 ```javascript
 import { connectWebSocket } from 'websocket-x';
 
-const ws = connectWebSocket('ws://localhost:8080/ws');
+const ws = await connectWebSocket('ws://localhost:8080/ws');
 
-ws.on('open', () => {
-  ws.send('Hello, Server!');
-});
+ws.send('Hello, Server!');
 
 ws.on('message', (message) => {
   console.log('📨 Received:', message);
@@ -231,7 +229,7 @@ Creates a WebSocket client connection.
 - `url` (string) — WebSocket URL (`ws://` or `wss://`)
 - `protocols` (string[]) — Optional subprotocols array
 
-**Returns:** `WebSocketClient` instance with events: `open`, `message`, `close`, `error`, `ping`, `pong`
+**Returns:** `Promise<WebSocketClient>` — Resolves with `WebSocketClient` instance after upgrade handshake. Events: `message`, `close`, `error`, `ping`, `pong`
 
 ---
 

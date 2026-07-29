@@ -23,8 +23,9 @@ export class WebSocketClient extends EventEmitter {
     });
 
     this.socket.on('close', () => {
+      const wasOpen = this.readyState === WebSocketClient.OPEN;
       this.cleanup();
-      if (this.readyState !== WebSocketClient.CLOSED) {
+      if (wasOpen || this.readyState !== WebSocketClient.CLOSED) {
         this.readyState = WebSocketClient.CLOSED;
         this.emit('close');
       }

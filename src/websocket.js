@@ -1,4 +1,7 @@
 import { EventEmitter } from 'events';
+import { parse } from 'url';
+import crypto from 'crypto';
+import { WebSocketClient } from './client.js';
 
 export class WebSocketWebSocket extends EventEmitter {
   constructor(server, options = {}) {
@@ -99,7 +102,7 @@ export class WebSocketWebSocket extends EventEmitter {
 
   generateAcceptValue(key) {
     const magic = '258EAFA5-E914-47DA-95CA-C5AB0DC85B11';
-    const sha1 = require('crypto').createHash('sha1');
+    const sha1 = crypto.createHash('sha1');
     sha1.update(key + magic);
     return sha1.digest('base64');
   }
