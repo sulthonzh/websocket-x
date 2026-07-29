@@ -5,7 +5,6 @@ import { createServer } from 'http';
 import { WebSocketWebSocket } from './websocket.js';
 import { connectWebSocket } from './index.js';
 import { readFileSync } from 'fs';
-import { join } from 'path';
 
 const program = new Command();
 
@@ -219,7 +218,7 @@ function startClient(url, options) {
     console.log(`Received: ${message}`);
   });
   
-  client.on('pong', (data) => {
+  client.on('pong', (_data) => {
     console.log('Received pong');
   });
   
@@ -239,7 +238,7 @@ function startClient(url, options) {
   }
 }
 
-function runTests(options) {
+function runTests(_options) {
   console.log('Running WebSocket tests...');
   
   // Simple connectivity test

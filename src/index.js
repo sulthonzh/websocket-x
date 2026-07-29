@@ -1,5 +1,4 @@
 import { createServer } from 'http';
-import { parse } from 'url';
 import { WebSocketWebSocket } from './websocket.js';
 import { WebSocketClient } from './client.js';
 

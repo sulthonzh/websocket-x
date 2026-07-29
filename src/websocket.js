@@ -48,7 +48,7 @@ export class WebSocketWebSocket extends EventEmitter {
     }
   }
 
-  completeUpgrade(request, socket, head) {
+  completeUpgrade(request, socket, _head) {
     const key = request.headers['sec-websocket-key'];
     const version = parseInt(request.headers['sec-websocket-version'] || '13', 10);
     
