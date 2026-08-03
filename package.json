@@ -35,5 +35,14 @@
     "c8": "^12.0.0",
     "eslint": "^10.0.0",
     "globals": "^17.8.0"
+  },
+  "files": [
+    "src/",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "publishConfig": {
+    "access": "public"
   }
 }
