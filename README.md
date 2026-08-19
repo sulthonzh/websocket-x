@@ -26,13 +26,13 @@ Zero-dependency WebSocket library for Node.js — RFC 6455 compliant with server
 ### Installation
 
 ```bash
-npm install websocket-x
+npm install @sulthonzh/websocket-x
 ```
 
 ### Echo Server (30 seconds)
 
 ```javascript
-import { createWebSocketServer } from 'websocket-x';
+import { createWebSocketServer } from '@sulthonzh/websocket-x';
 
 const { server, websocket } = createWebSocketServer();
 
@@ -50,7 +50,7 @@ server.listen(8080, () => {
 ### Client Connection
 
 ```javascript
-import { connectWebSocket } from 'websocket-x';
+import { connectWebSocket } from '@sulthonzh/websocket-x';
 
 const ws = await connectWebSocket('ws://localhost:8080/ws');
 
@@ -68,7 +68,7 @@ ws.on('message', (message) => {
 ### 1. Live Dashboard with Real-Time Updates
 
 ```javascript
-import { createWebSocketServer } from 'websocket-x';
+import { createWebSocketServer } from '@sulthonzh/websocket-x';
 
 const { server, websocket } = createWebSocketServer({ maxPayload: 10_485_760 }); // 10MB
 
@@ -102,7 +102,7 @@ server.listen(3000, () => console.log('Dashboard server on ws://localhost:3000/w
 ### 2. Chat Room with Rooms
 
 ```javascript
-import { createWebSocketServer } from 'websocket-x';
+import { createWebSocketServer } from '@sulthonzh/websocket-x';
 
 const { server, websocket } = createWebSocketServer();
 const rooms = new Map(); // roomId -> Set<clients>
@@ -137,7 +137,7 @@ server.listen(8080, () => console.log('Chat server on ws://localhost:8080/ws'));
 ### 3. Game Server with Ping Optimization
 
 ```javascript
-import { createWebSocketServer } from 'websocket-x';
+import { createWebSocketServer } from '@sulthonzh/websocket-x';
 
 const { server, websocket } = createWebSocketServer();
 const players = new Map(); // playerId -> { ws, position, health }
@@ -330,7 +330,7 @@ import { WebSocketServer, WebSocket } from 'ws';
 const wss = new WebSocketServer({ port: 8080 });
 
 // After (websocket-x)
-import { createWebSocketServer, connectWebSocket } from 'websocket-x';
+import { createWebSocketServer, connectWebSocket } from '@sulthonzh/websocket-x';
 const { server, websocket } = createWebSocketServer();
 server.listen(8080);
 ```

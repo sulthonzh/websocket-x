@@ -1,5 +1,5 @@
 {
-  "name": "websocket-x",
+  "name": "@sulthonzh/websocket-x",
   "version": "1.0.0",
   "description": "Zero-dependency WebSocket library for Node.js with practical utilities and CLI tool",
   "main": "src/index.js",
